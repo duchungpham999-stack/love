@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Trương Ngọc Hiền ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff9a9e;
+            --deep-ruby: #9b111e;
+            --gold: #ffd700;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --text-color: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+            min-height: 100vh;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng trôi nổi nền */
+        .bg-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .heart-bg {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.4);
+            animation: floatUp 15s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        /* Container chính */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--deep-ruby);
+            text-shadow: 2px 2px 0px rgba(255, 215, 0, 0.4);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #777;
+            font-style: italic;
+        }
+
+        /* Đếm ngày yêu */
+        .love-timer-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(155, 17, 30, 0.15);
+            animation: zoomIn 1s ease;
+        }
+
+        .timer-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--deep-ruby);
+            margin-bottom: 20px;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            min-width: 80px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .time-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-pink);
+            display: block;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Lời yêu thương */
+        .love-quotes-section {
+            margin-bottom: 50px;
+        }
+
+        .quote-box {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #quote-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--deep-ruby);
+            transition: opacity 0.5s ease;
+        }
+
+        .heart-btn {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+            transition: transform 0.2s;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .heart-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .photo-frame {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1/1; /* Vuông */
+        }
+
+        .photo-frame:hover {
+            transform: rotate(-3deg) scale(1.05);
+            z-index: 2;
+            border: 2px solid var(--gold);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 2rem;
+        }
+        
+        /* Nếu bạn có ảnh thật, thay class photo-placeholder bằng thẻ img */
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Animations Keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .time-box { min-width: 60px; padding: 10px; }
+            .time-value { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-elements" id="bg-elements"></div>
+
+    <div class="container">
+        <header>
+            <div class="subtitle">Happy Valentine's Day</div>
+            <h1>Gửi Trương Ngọc Hiền</h1>
+            <div class="subtitle">Người con gái anh yêu thương nhất 💕</div>
+        </header>
+
+        <section class="love-timer-card">
+            <div class="timer-title">Chúng mình đã bên nhau được...</div>
+            <div class="timer-display">
+                <div class="time-box">
+                    <span class="time-value" id="days">0</span>
+                    <span class="time-label">Ngày</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="hours">0</span>
+                    <span class="time-label">Giờ</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="minutes">0</span>
+                    <span class="time-label">Phút</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="seconds">0</span>
+                    <span class="time-label">Giây</span>
+                </div>
+            </div>
+            <div style="margin-top: 15px; font-style: italic; color: #555;">
+                Kể từ ngày 17/01/2026
+            </div>
+        </section>
+
+        <section class="love-quotes-section">
+            <div class="quote-box">
+                <p id="quote-text">"Nhấn nút bên dưới để nhận lời yêu thương..."</p>
+            </div>
+            <button class="heart-btn" onclick="showLove()">
+                💌 Gửi Lời Yêu Đến Hiền
+            </button>
+        </section>
+
+        <h2 style="font-family: 'Dancing Script'; color: var(--deep-ruby); margin-bottom: 20px;">Kỷ Niệm Của Đôi Ta</h2>
+        <section class="gallery">
+            <div class="photo-frame">
+                <img src="ptb hồ Gươm 1.jpg" alt="Anh kỷ niệm">
+            </div>            
+            <div class="photo-frame">
+                <img src="ptb hồ Gươm 2.jpg" alt="Anh kỷ niệm">
+            </div>
+            <div class="photo-frame">
+                <img src="ptb hồ Gươm 3.jpg" alt="Anh kỷ niệm">
+            </div>
+            <div class="photo-frame">
+                <img src="ptb hồ Gươm 4.jpg" alt="Anh kỷ niệm">
+            </div>
+            <div class="photo-frame">
+                <img src="ptb hồ Gươm 5.jpg" alt="Anh kỷ niệm">
+            </div>
+        </section>
+
+        <footer>
+            <p>Mãi yêu nhau, em nhé! ❤️</p>
+            <p>From your love with all my heart.</p>
+        </footer>
+    </div>
+
+    <script>
+        // 1. CẤU HÌNH NGÀY YÊU NHAU (Năm, Tháng - 1, Ngày)
+        // Tháng trong JS bắt đầu từ 0 (Tháng 1 là 0)
+        const startDate = new Date(2026, 0, 17, 0, 0, 0).getTime();
+
+        // 2. CẬP NHẬT ĐỒNG HỒ
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = now - startDate;
+
+            if (distance < 0) {
+                // Nếu chưa đến ngày đó (trường hợp test sai ngày)
+                document.getElementById("days").innerText = "0";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Chạy ngay lập tức
+
+        // 3. LỜI YÊU THƯƠNG NGẪU NHIÊN
+        const messages = [
+            "Anh yêu em nhiều lắm, Hiền ơi! ❤️",
+            "Nhớ em vô cùng, chỉ muốn gặp em ngay thôi.",
+            "Thương em rất nhiều, cô gái bé nhỏ của anh.",
+            "Mãi yêu nhau, em nhé!",
+            "Chỉ yêu mình em thôi, Hiền à.",
+            "Cảm ơn em đã đến bên cuộc đời anh.",
+            "Mỗi ngày bên em là một ngày hạnh phúc.",
+            "Em là điều tuyệt vời nhất anh từng có."
+        ];
+
+        function showLove() {
+            const quoteText = document.getElementById("quote-text");
+            // Hiệu ứng fade out
+            quoteText.style.opacity = 0;
+
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                quoteText.innerText = messages[randomIndex];
+                // Hiệu ứng fade in
+                quoteText.style.opacity = 1;
+            }, 500);
+        }
+
+        // 4. TẠO HIỆU ỨNG TRÁI TIM BAY NỀN
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart-bg");
+            heart.innerHTML = "❤";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 5 + 10 + "s"; // 10-15s
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            
+            document.getElementById("bg-elements").appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }
+
+        setInterval(createHeart, 1000);
+
+    </script>
+</body>
+</html>
